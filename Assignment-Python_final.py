@@ -4,7 +4,7 @@
 # In[12]:
 
 
-## Read the data
+## Read the data 
 import matplotlib
 import pandas as pd
 data=r"/Volumes/ExtData/Documents/VCU/2nd Sem/Python/data/winequality.csv"
@@ -44,7 +44,7 @@ for i, ax in enumerate(axes.flat):
     #average line below
     ax.axvline(x=df[col].mean(),color='black', lw=3)
     ax.set_xlabel(col.capitalize(), size=12)
-    
+
 plt.show()
 plt.close();
 
@@ -65,7 +65,7 @@ df1=df[['fixed acidity', 'volatile acidity', 'citric acid',
 corr_matrix = df1.corr()
 plt.figure(figsize=(12, 9))
 sns.heatmap(
-    corr_matrix, 
+    corr_matrix,
     vmin=-1, vmax=1, center=0,
     cmap=sns.diverging_palette(10, 200, n=256),
     square=True
@@ -120,7 +120,7 @@ for ty in df['wine type'].unique().tolist():
     l.append(t)
 
 #print(l)
-df3 = pd.DataFrame(l, columns = list(df[df['wine type']==ty].corr().columns)+['color'])  
+df3 = pd.DataFrame(l, columns = list(df[df['wine type']==ty].corr().columns)+['color'])
 
 
 # In[8]:
@@ -142,12 +142,12 @@ fig, axes = plt.subplots(nrows=1, ncols=2,figsize=(17, 9))
 
 k=0
 for i, ax in enumerate(axes.flat):
-    
+
     ty=df['wine type'].unique().tolist()[i]
     #print(ty)
     corr_matrix=df[df['wine type']==ty].corr()
     sns.heatmap(
-        corr_matrix, 
+        corr_matrix,
         vmin=-1, vmax=1, center=0,
         cmap=sns.diverging_palette(10*(k+1), 200*(k+1), n=256),
         #cmap='icefire',
@@ -158,8 +158,8 @@ for i, ax in enumerate(axes.flat):
 
     ax.set_title(ty)
 
-    
-    
+
+
 plt.show()
 plt.close();
 
@@ -177,7 +177,7 @@ fig, axes = plt.subplots(nrows=1, ncols=2,figsize=(17, 9))
 
 k=0
 for i, ax in enumerate(axes.flat):
-    
+
     ty=df['wine type'].unique().tolist()[i]
     #print(ty)
     sns.boxplot(x='quality', y='fixed acidity', data=df[df['wine type']==ty],ax=ax)
@@ -185,14 +185,10 @@ for i, ax in enumerate(axes.flat):
     ax.set_ylabel('Fixed Acidity', size=14)
     ax.set_title(ty, size=16)
 
-    
-    
+
+
 plt.show()
 plt.close();
 
 
 # In[ ]:
-
-
-
-
