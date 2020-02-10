@@ -4,7 +4,7 @@
 # In[12]:
 
 
-## Read the data 
+## Read the data
 import matplotlib
 import pandas as pd
 data=r"/Volumes/ExtData/Documents/VCU/2nd Sem/Python/data/winequality.csv"
